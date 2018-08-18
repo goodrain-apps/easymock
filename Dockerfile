@@ -4,6 +4,8 @@ RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
 
+VOLUME /usr/src/app/logs /usr/src/app/config
+
 RUN set -x  \
     && apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -y gnupg sudo apt-transport-https ca-certificates procps curl net-tools build-essential python wget jq \
@@ -24,4 +26,4 @@ RUN set -x  \
 
 ENV NODE_ENV production
 
-CMD ["/usr/local/bin/node", "/usr/src/app/app.js"]
+CMD ["node", "/usr/src/app/app.js"]

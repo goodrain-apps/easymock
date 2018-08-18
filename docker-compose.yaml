@@ -18,6 +18,7 @@ services:
     image: goodrainapps/easymock:v1.6.0
     container_name: easymock
     volumes:
-      - /data/easymock/:/home/easy-mock/easy-mock/
+      - /data/easymock/logs:/usr/src/app/logs
+      - /data/easymock/config:/usr/src/app/config
     network_mode: host
     restart: always
